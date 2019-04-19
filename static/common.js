@@ -254,13 +254,13 @@ var UP = {
                 }
                 // 上传失败，上传失败分很多种情况，具体按实际来设置
                 else if (rs.status === 500) {
-                    progress.text(that.__msg['failed']);
+                    file_obj.progress.text(that.__msg['failed']);
                 } else if (rs.status === 502) {
-                    progress.text(that.__msg['incomplete']);
+                    file_obj.progress.text(that.__msg['incomplete']);
                 }
             },
             error: function() {
-                progress.text(that.__msg['failed']);
+                file_obj.progress.text(that.__msg['failed']);
             }
         });
     }
