@@ -215,7 +215,9 @@ var UP = {
             blobTo = (file_obj.chunk + 1) * file_obj.eachSize > file_obj.totalSize ? file_obj.totalSize : (file_obj.chunk + 1) * file_obj.eachSize, // 分段结尾
             percent = (100 * blobTo / file_obj.totalSize).toFixed(1), // 已上传的百分比
             timeout = 5000, // 超时时间
-            fd = new FormData($(that.__input.param.myFile)[0]);
+            // fd = new FormData($(that.__input.param.myFile)[0]);
+            // 修改****
+            fd = new FormData(document.getElementById(that.__input.param.myFile.split('#')[1])[0]);
 
         fd.append('theFile', that.__findTheFile(file_obj.fileName).slice(blobFrom, blobTo)); // 分好段的文件
         fd.append('fileName', file_obj.fileName); // 文件名
